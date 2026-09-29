@@ -1,0 +1,212 @@
+@layer components {
+  .activities-section {
+    position: relative;
+    overflow: hidden;
+    padding: 115px 0 120px;
+    background:
+      radial-gradient(ellipse at 97% 15%, rgb(247 201 210 / 44%), transparent 38%),
+      linear-gradient(135deg, #fff9f7, #f7e8e9 66%, #faefeb);
+  }
+
+  .activities-section::before {
+    position: absolute;
+    top: 42px;
+    right: max(25px, calc((100vw - 1180px) / 2));
+    width: 96px;
+    height: 96px;
+    border: 1px solid rgb(183 110 121 / 22%);
+    border-radius: 50%;
+    content: "";
+  }
+
+  .activities-section::after {
+    position: absolute;
+    top: 54px;
+    right: max(37px, calc((100vw - 1156px) / 2));
+    width: 72px;
+    height: 72px;
+    border: 1px solid rgb(216 176 106 / 37%);
+    border-radius: 50%;
+    content: "";
+  }
+
+  .activities-layout {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 0.84fr) minmax(370px, 1fr);
+    align-items: center;
+    gap: clamp(48px, 8vw, 110px);
+  }
+
+  .activities-intro {
+    max-width: 470px;
+  }
+
+  .activities-overline {
+    margin: 0 0 19px;
+    color: var(--color-rose-gold);
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-style: italic;
+  }
+
+  .activities-description {
+    max-width: 360px;
+    margin: 19px 0 28px;
+    color: rgb(36 23 27 / 74%);
+    font-size: 13px;
+    line-height: 1.85;
+  }
+
+  .activities-hosts {
+    display: grid;
+    max-width: 380px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    border-top: 1px solid rgb(183 110 121 / 38%);
+  }
+
+  .activity-host {
+    padding: 16px 16px 6px 0;
+  }
+
+  .activity-host + .activity-host {
+    padding-left: 17px;
+    border-left: 1px solid rgb(183 110 121 / 25%);
+  }
+
+  .activity-host .detail-label {
+    color: var(--color-rose-gold);
+  }
+
+  .activity-host-name {
+    margin: 0;
+    color: var(--color-burgundy);
+    font-family: var(--font-display);
+    font-size: 19px;
+  }
+
+  .activities-list-wrap {
+    position: relative;
+    padding: 30px 34px 24px;
+    border: 1px solid rgb(183 110 121 / 20%);
+    border-top-color: var(--color-rose-gold);
+    background: rgb(255 249 245 / 76%);
+    box-shadow: 0 18px 40px rgb(90 24 48 / 7%);
+  }
+
+  .activities-list-wrap > .detail-label {
+    margin-bottom: 12px;
+    color: var(--color-rose-gold);
+  }
+
+  .activities-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 28px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .activity-item {
+    display: grid;
+    min-height: 72px;
+    grid-template-columns: 14px 25px minmax(0, 1fr);
+    align-items: center;
+    gap: 11px;
+    border-bottom: 1px solid rgb(90 24 48 / 11%);
+    color: var(--color-burgundy);
+    font-family: var(--font-display);
+    font-size: 16px;
+    transition: color 160ms ease;
+  }
+
+  .activity-item:hover {
+    color: var(--color-rose-gold);
+  }
+
+  .activity-ornament {
+    color: var(--color-rose-gold);
+    font-size: 12px;
+    text-align: center;
+  }
+
+  .activity-item svg {
+    color: var(--color-champagne);
+  }
+
+  @media (max-width: 800px) {
+    .activities-layout {
+      grid-template-columns: minmax(0, 0.8fr) minmax(300px, 1fr);
+      gap: 35px;
+    }
+
+    .activities-list-wrap {
+      padding: 25px 22px 18px;
+    }
+
+    .activities-list {
+      gap: 0 16px;
+    }
+
+    .activity-item {
+      grid-template-columns: 14px 22px minmax(0, 1fr);
+      gap: 7px;
+      font-size: 14px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .activities-section {
+      padding: 82px 0 88px;
+    }
+
+    .activities-section::before {
+      top: 28px;
+      right: 24px;
+      width: 64px;
+      height: 64px;
+    }
+
+    .activities-section::after {
+      top: 38px;
+      right: 34px;
+      width: 44px;
+      height: 44px;
+    }
+
+    .activities-layout {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+
+    .activities-intro {
+      max-width: 450px;
+    }
+
+    .activities-hosts {
+      max-width: 360px;
+    }
+
+    .activities-list-wrap {
+      padding: 23px 18px 16px;
+    }
+
+    .activities-list {
+      gap: 0 12px;
+    }
+
+    .activity-item {
+      min-height: 63px;
+      grid-template-columns: 14px 19px minmax(0, 1fr);
+      gap: 5px;
+      font-size: 13px;
+    }
+
+    .activity-item svg {
+      width: 17px;
+      height: 17px;
+    }
+  }
+}

@@ -1,0 +1,5 @@
+# Netlify/Vercel SPA fallback: every route resolves to index.html.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
